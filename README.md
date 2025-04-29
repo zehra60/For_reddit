@@ -1,25 +1,29 @@
-# For_reddit
-Let's start with functions first because they are essential.
- 
-●Instead of writing normal functions, lambda functions that take up less space can be written.
-for example,
+For_reddit  
+***dart Let's start with functions first because they are essential.
 
-// Normal  function
+●Instead of writing normal functions, lambda functions that take up less space can be written. for example,
+
+```dart
+// Normal function
 
 int collect(int a, int b) {
-  return a + b;
+return a + b;
 }
+```
 
+```dart
 // Lambda function
+
 int collect(int a, int b) => a + b;
+```
 
-So what if my function is more complicated than that?
-Example,
+So what if my function is more complicated than that? Example,
 
+```dart
 // Normal version
 
-List<int> evenNumbers(List<int> numbers) {
-  var results= <int>[];
+List evenNumbers(List numbers) {
+  var results= [];
   for (var number in numbers) {
     if (number% 2 == 0) {
       result.add(number);
@@ -27,18 +31,21 @@ List<int> evenNumbers(List<int> numbers) {
   }
   return result;
 }
+```
 
-// lambda  version
-List<int> evenNumbers(List<int> numbers) => 
-    [for (var number in numbers if (number % 2 == 0) number];
+```dart
+// lambda version
 
-Yes,now I am explaining the second most common problem in dart code class structures
+List evenNumbers(List numbers) => [for (var number in numbers if (number % 2 == 0) number];
+```
 
-With Widget used to 
-●The extension method can be used because it is useful when adding helper methods to an existing Class.
-Use with widgets
+●Yes,now I am explaining the second most common problem in dart code class structures
 
+With Widget used to The extension method can be used because it is useful when adding helper methods to an existing Class. Use with widgets
+
+```dart
 //No-extension version
+
 class WidgetUtils {
   static Widget withPadding(Widget child, EdgeInsets padding) {
     return Padding(
@@ -54,8 +61,11 @@ class WidgetUtils {
     );
   }
 }
+```
 
+```dart
 //usage
+
 final widget = WidgetUtils.withPadding(
   WidgetUtils.withMargin(
     Text('Hello'),
@@ -63,7 +73,9 @@ final widget = WidgetUtils.withPadding(
   ),
   EdgeInsets.all(16),
 );
+```
 
+```dart
 //with extansion version
 
 extension WidgetExtensions on Widget {
@@ -77,12 +89,17 @@ extension WidgetExtensions on Widget {
     child: this,
   );
 }
+```
 
+```dart
 // usage
+
 final widget = Text('Hello')
   .margin(EdgeInsets.all(8))
   .padding(EdgeInsets.all(16));
+```
 
+```dart
 //Creating widgets with methods
 
 class HomePage extends StatelessWidget {
@@ -113,4 +130,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+```
+
 I hope it will be useful for you
