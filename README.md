@@ -1,5 +1,5 @@
 For_reddit  
-***dart Let's start with functions first because they are essential.
+ Let's start with functions first because they are essential.
 
 ●Instead of writing normal functions, lambda functions that take up less space can be written. for example,
 
